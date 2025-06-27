@@ -1,0 +1,21 @@
+[project]
+name = "playbookgen"
+version = "0.1.0"
+description = "A CLI tool to generate playbooks"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.92.2",
+    "playwright>=1.53.0",
+    "python-dotenv>=1.1.1",
+    "pyyaml>=6.0.2",
+]
+
+[project.scripts]
+playbookgen = "playbookgen.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
