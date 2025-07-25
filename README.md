@@ -2,6 +2,9 @@
 
 A CLI tool for generating [AttackMate](https://github.com/ait-testbed/attackmate) playbooks using LLMs (currently supports OpenAI's GPT models).
 
+This is a proof of concept and currently can only generate playbooks with the
+`browser` and `sleep` [commands of AttackMate](https://aeciddocs.ait.ac.at/attackmate/current/playbook/commands/index.html#commands).
+
 ### Setup
 
 1. **Clone the repository** and create a `.env` file in the project root:
@@ -17,6 +20,7 @@ A CLI tool for generating [AttackMate](https://github.com/ait-testbed/attackmate
     
     ```bash
     uv venv
+    source .venv/bin/activate
     uv pip install -e .
     ```
     
@@ -35,9 +39,10 @@ A CLI tool for generating [AttackMate](https://github.com/ait-testbed/attackmate
 
     </details>
 
-3. **Install Playwright**:
+3. **Install Playwright with its dependencies**:
 
     ```bash
+    playwright install-deps
     playwright install
     ```
 
@@ -48,8 +53,11 @@ A CLI tool for generating [AttackMate](https://github.com/ait-testbed/attackmate
 playbookgen --help
 ```
 
-To generate a playbook:
-
+To generate a playbook run the following, then insert prompt and press enter:
 ```bash
 playbookgen --output playbook.yml
 ```
+
+### Demo
+
+![PlabookGen Demo](images/demo_playbookgen.gif "PlabookGen Demo")
